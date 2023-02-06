@@ -30,6 +30,6 @@ public class ListSearchIndex {
                 newlist.add(i);
             }
         }
-        return list;
+        return newlist;
     }
 }
