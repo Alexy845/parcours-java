@@ -4,6 +4,9 @@ import java.util.List;
 public class ListSearchIndex {
     public static Integer findLastIndex(List<Integer> list, Integer value) {
         // your code here
+        if (list.indexOf(value) == -1) {
+            return null;
+        }
         if (list == null || list.size() == 0) {
             return null;
         }
@@ -15,6 +18,9 @@ public class ListSearchIndex {
     public static Integer findFirstIndex(List<Integer> list, Integer value) {
         // your code here
         if (list == null || list.size() == 0) {
+            return null;
+        }
+        if (list.indexOf(value) == -1) {
             return null;
         }
         return list.indexOf(value);
