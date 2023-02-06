@@ -23,7 +23,7 @@ public class ListSearchIndex {
         // your code here
         List<Integer> newlist = new ArrayList<Integer>();
         if (list == null || list.size() == 0) {
-            return null;
+            return new ArrayList<Integer>();
         }
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).equals(value)) {
