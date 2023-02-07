@@ -16,6 +16,9 @@ public class ParseDate {
     }
 
     public static LocalTime parseTimeFormat(String stringDate) {
+        if (stringDate == null) {
+            return null;
+        }
         String[] parts = stringDate.split(" ");
         int hours = Integer.parseInt(parts[0]);
         if (!stringDate.contains("heures du matin")) {
