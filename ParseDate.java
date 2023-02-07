@@ -19,6 +19,7 @@ public class ParseDate {
         }
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE dd MMMM yyyy");
         return LocalDate.parse(stringDate, formatter);
+    
     }
 
     public static LocalTime parseTimeFormat(String stringDate) {
