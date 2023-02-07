@@ -1,7 +1,12 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class ParseDate {
 
@@ -17,9 +22,13 @@ public class ParseDate {
         if (stringDate == null) {
             return null;
         }
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE dd MMMM yyyy");
-        return LocalDate.parse(stringDate, formatter);
-    
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE dd MMMM yyyy");
+        try {
+            Date date = simpleDateFormat.parse(stringDate);
+            return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        } catch (ParseException e) {
+            return null;
+        }
     }
 
     public static LocalTime parseTimeFormat(String stringDate) {
