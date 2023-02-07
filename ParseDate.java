@@ -6,11 +6,17 @@ import java.time.format.DateTimeFormatter;
 public class ParseDate {
 
     public static LocalDateTime parseIsoFormat(String stringDate) {
+        if (stringDate == null) {
+            return null;
+        }
         DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
         return LocalDateTime.parse(stringDate, formatter);
     }
 
     public static LocalDate parseFullTextFormat(String stringDate) {
+        if (stringDate == null) {
+            return null;
+        }
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE dd MMMM yyyy");
         return LocalDate.parse(stringDate, formatter);
     }
