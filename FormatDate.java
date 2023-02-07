@@ -8,9 +8,8 @@ public class FormatDate {
         return "Le " + dateTime.format(DateTimeFormatter.ofPattern("dd MMM. de l'an yyyy à HH'h'mm'm et ss's'")) ;
     }
     public static String formatSimple(LocalDate date) {
-        LocalDateTime dateTime = date.atStartOfDay();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd HH");
-        return dateTime.format(formatter);
+        return date.format(formatter);
     }
 
     public static String formatIso(LocalTime time) {
