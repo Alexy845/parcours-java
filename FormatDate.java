@@ -9,7 +9,7 @@ public class FormatDate {
     }
     public static String formatSimple(LocalDate date) {
         LocalDateTime dateTime = date.atStartOfDay();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd hh a");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd hh");
         return dateTime.format(formatter);
     
     }
