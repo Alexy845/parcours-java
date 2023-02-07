@@ -29,6 +29,7 @@ public class ParseDate {
         } catch (ParseException e) {
             return null;
         }
+    
     }
 
     public static LocalTime parseTimeFormat(String stringDate) {
