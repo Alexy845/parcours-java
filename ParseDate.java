@@ -16,9 +16,14 @@ public class ParseDate {
     }
 
     public static LocalTime parseTimeFormat(String stringDate) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        return LocalTime.parse(stringDate, formatter);
-
+        String[] parts = stringDate.split(" ");
+        int hours = Integer.parseInt(parts[0]);
+        if (!stringDate.contains("heures du matin")) {
+            hours += 12;
+        }
+        int minutes = Integer.parseInt(parts[4]);
+        int seconds = Integer.parseInt(parts[7]);
+        return LocalTime.of(hours, minutes, seconds);
     }
 
 }
