@@ -1,7 +1,12 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 public class ExerciseRunner {
+
     public static void main(String[] args) {
-        System.out.println(ParseDate.parseIsoFormat("2022-04-25T20:51:28.709039322"));
-        System.out.println(ParseDate.parseFullTextFormat("lundi 25 avril 2022"));
-        System.out.println(ParseDate.parseTimeFormat("09 heures du soir, 07 minutes et 23 secondes"));
+        System.out.println(FormatDate.formatToFullText(LocalDateTime.of(2021, 8, 22, 13, 25, 46)));
+        System.out.println(FormatDate.formatSimple(LocalDate.of(2022, 2, 13)));
+        System.out.println(FormatDate.formatIso(LocalTime.of(16, 18, 56, 8495847)));
     }
 }
