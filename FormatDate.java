@@ -5,16 +5,18 @@ import java.time.format.DateTimeFormatter;
 public class FormatDate {
 
     public static String formatToFullText(LocalDateTime dateTime) {
-        return "Le " + dateTime.format(DateTimeFormatter.ofPattern("dd MMM. de l'an yyyy à HH'h'mm'm et ss's'")) ;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd yyyy HH:mm:ss");
+        return dateTime.format(formatter);
     }
     
     public static String formatSimple(LocalDate date) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd HH");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return date.format(formatter);
     }
 
     public static String formatIso(LocalTime time) {
-        return time.format(DateTimeFormatter.ISO_LOCAL_TIME);
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_TIME;
+        return time.format(formatter);
 
     }
 
