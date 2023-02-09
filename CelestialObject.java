@@ -11,7 +11,7 @@ public class CelestialObject {
         this.name = name;
     }
     public CelestialObject() {
-        this("Unknown", 0, 0, 0);
+        this("Soleil", 0, 0, 0);
     }
     
 }
