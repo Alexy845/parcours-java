@@ -10,12 +10,18 @@ public class DifferenceBetweenDate {
         if (localTime1 == null || localTime2 == null) {
             return null;
         }
+        if (localTime1.isAfter(localTime2)) {
+            return Duration.between(localTime2, localTime1);
+        }
         return Duration.between(localTime1, localTime2);
     }
 
     public static Period periodBetweenDate(LocalDate date1, LocalDate date2) {
         if (date1 == null || date2 == null) {
             return null;
+        }
+        if (date1.isAfter(date2)) {
+            return Period.between(date2, date1);
         }
         return Period.between(date1, date2);
     }
