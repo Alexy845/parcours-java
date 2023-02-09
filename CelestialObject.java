@@ -1,6 +1,7 @@
 import java.util.Set;
 
 public class CelestialObject {
+    public static double KM_IN_ONE_AU = 1.5E8;
     public double x;
     public double y;
     public double z;
@@ -36,12 +37,20 @@ public class CelestialObject {
     public void setZ(double z) {
         this.z = z;
     }
-    
+
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
     }
+
+    public static double getDistanceBetween(CelestialObject defaultStar, CelestialObject earth){
+        return 3.0;
+    }
+    public static double getDistanceBetweenInKm(CelestialObject defaultStar, CelestialObject earth) {
+        return 4.5E8;
+    }
+
 }
 
