@@ -30,6 +30,9 @@ public class DifferenceBetweenDate {
         if (dateTime1 == null || dateTime2 == null) {
             return null;
         }
+        if (dateTime1.isAfter(dateTime2)) {
+            return Duration.between(dateTime2, dateTime1).toHours();
+        }
         return Duration.between(dateTime1, dateTime2).toHours();
     }
 
