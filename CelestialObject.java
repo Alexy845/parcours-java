@@ -85,11 +85,15 @@ public class CelestialObject {
         this.name = name;
     }
 
-    public static double getDistanceBetween(CelestialObject defaultStar, CelestialObject earth){
-        return Math.sqrt(Math.pow(defaultStar.getX() - earth.getX(), 2) + Math.pow(defaultStar.getY() - earth.getY(), 2) + Math.pow(defaultStar.getZ() - earth.getZ(), 2));
+    public static double getDistanceBetween(CelestialObject o1, CelestialObject o2) {
+        double dx = o1.x - o2.x;
+        double dy = o1.y - o2.y;
+        double dz = o1.z - o2.z;
+        return Math.sqrt(dx * dx + dy * dy + dz * dz);
     }
-    public static double getDistanceBetweenInKm(CelestialObject defaultStar, CelestialObject earth) {
-        return getDistanceBetween(defaultStar, earth) * KM_IN_ONE_AU;
+    
+    public static double getDistanceBetweenInKm(CelestialObject o1, CelestialObject o2) {
+        return getDistanceBetween(o1, o2) * KM_IN_ONE_AU;
     }
 
 }
