@@ -15,7 +15,6 @@ public class Star extends CelestialObject {
     }
 
     public Star() {
-        this("Soleil", 0, 0, 0, 0);
     }
 
     @Override
