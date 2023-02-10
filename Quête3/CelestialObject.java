@@ -1,3 +1,4 @@
+package Quête3;
 
 
 public class CelestialObject {

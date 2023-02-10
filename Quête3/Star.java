@@ -1,3 +1,4 @@
+package Quête3;
 public class Star extends CelestialObject {
 
     private double magnitude;
