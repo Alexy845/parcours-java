@@ -3,18 +3,18 @@ import java.util.List;
 
 
 public class Galaxy {
-    private List<CelestialObject> CelestialObjects;
+    private List<CelestialObject> celestialObjects;
 
 
     public List<CelestialObject> getCelestialObjects() {
-        return CelestialObjects;
+        return celestialObjects;
     }
 
     public Galaxy() {
-        CelestialObjects = new ArrayList<CelestialObject>();
+        this.celestialObjects = new ArrayList<CelestialObject>();
     }
-    
+
     public void addCelestialObject(CelestialObject celestialObject) {
-        this.CelestialObjects.add(celestialObject);
+        this.celestialObjects.add(celestialObject);
     }
 }
