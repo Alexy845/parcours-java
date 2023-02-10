@@ -3,7 +3,7 @@
 public class CelestialObject {
     @Override
     public String toString() {
-        return getName() +"is positioned at ("+ String.format("%.3f", getX()) +", "+ String.format("%.3f", getY()) +", "+ String.format("%.3f", getZ()) +")";
+        return getName() +" is positioned at ("+ String.format("%.3f", getX()) +", "+ String.format("%.3f", getY()) +", "+ String.format("%.3f", getZ()) +")";
     }
     @Override
     public int hashCode() {
