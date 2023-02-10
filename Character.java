@@ -1,8 +1,8 @@
 public class Character {
 
-    private int maxHealth;
+    private final int maxHealth;
     private int currentHealth;
-    private String name;
+    private final String name;
 
     public int getMaxHealth() {
         return maxHealth;
@@ -36,7 +36,7 @@ public class Character {
     public String toString() {
 
         if (currentHealth <= 0) {
-            return getName() + " KO";
+            return getName() + " : KO";
         }
         return getName() + " : " + getCurrentHealth() + "/" + getMaxHealth();
 
