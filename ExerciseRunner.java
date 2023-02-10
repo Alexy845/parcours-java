@@ -1,18 +1,16 @@
 public class ExerciseRunner {
 
     public static void main(String[] args) {
+        System.out.println(Character.printStatus());
+
         Character aragorn = new Character("Aragorn", 20);
-        Character uruk = new Character("Uruk", 5);
-        
-        System.out.println(aragorn.toString());
-        System.out.println(uruk.toString());
-        
-        aragorn.attack(uruk);
+        Character uruk = new Character("Uruk", 15);
 
-        System.out.println(uruk.toString());
-        
-        aragorn.takeDamage(12);
+        System.out.println(Character.printStatus());
 
-        System.out.println(aragorn.toString());
+        Character winner = Character.fight(aragorn, uruk);
+
+        System.out.println(winner.toString());
+        System.out.println(Character.printStatus());
     }
 }
