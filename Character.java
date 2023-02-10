@@ -56,11 +56,11 @@ public class Character {
         while (character1.getCurrentHealth() > 0 || character2.getCurrentHealth() > 0) {
             character1.attack(character2);
         if (character2.getCurrentHealth() <= 0) {
-            return character2;
+            return character1;
         }
         character2.attack(character1); 
         if (character1.getCurrentHealth() <= 0) {
-            return character1;
+            return character2;
             }
         }
         return null;
