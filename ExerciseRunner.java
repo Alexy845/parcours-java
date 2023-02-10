@@ -1,13 +1,11 @@
 public class ExerciseRunner {
 
     public static void main(String[] args) {
-        Star star = new Star();
-        Star star2 = new Star();
-        Star proxima = new Star("Proxima", 18.389, 832.32, 218, 0.4);
-        
-        System.out.println(star.toString());
-        System.out.println(proxima.toString());
-        System.out.println(star.equals(star2));
-        System.out.println(star.equals(proxima));
+        Planet earth = new Planet();
+        Planet naboo = new Planet("Naboo", 17.4389, 8349.1, 8943.92, new Star("Betelgeuse", 128.23, -12.82, 32.328, 1289.3));
+
+        System.out.println(naboo.toString());
+        System.out.println(earth.toString());
+        System.out.println(naboo.getCenterStar().toString());
     }
 }
