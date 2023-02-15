@@ -10,16 +10,16 @@ public class Templar extends Character implements Healer,Tank{
 
     @Override
     public void takeDamage(int damage) {
-        if (damage > currentHealth){
+        int damageAfterShield = damage - shield;
+        if (damageAfterShield > currentHealth){
             currentHealth = 0;
-        }else{
-            currentHealth -= damage;
+        } else {
+            currentHealth -= damageAfterShield;
         }
     }
-    @Override
     public void attack(Character character) {
-        heal(character);
-        character.takeDamage(10);
+        heal(this);
+        character.takeDamage(6);
     }
 
     @Override
