@@ -1,15 +1,13 @@
 public class ExerciseRunner {
 
     public static void main(String[] args) {
-        Weapon narsil = new Weapon("Narsil", 15);
-        Weapon baguette = new Weapon("Baguette magique", 20);
-        Weapon massue = new Weapon("Massue", 8);
-        Monster troll = new Monster("Troll", 30,  massue);
-        Sorcerer dumbledore = new Sorcerer("Dumbledore", 25, 5, baguette);
-        Templar alistair = new Templar("Alistair", 18, 2, 3, narsil);
-
-        Character.fight(alistair, troll);
-
-        System.out.println(Character.printStatus());
+        Weapon feu = new Weapon("Boule de feu", 7);
+        Sorcerer triss = new Sorcerer("Triss Merigold", 30, 5, feu); 
+        Templar geralt = new Templar("Geralt de Riv", 28, 2, 5, feu); 
+        DeadCharacterException exceptionTriss = new DeadCharacterException(triss);
+        DeadCharacterException exceptionGeralt = new DeadCharacterException(geralt);
+        
+        System.out.println(exceptionTriss.getMessage());
+        System.out.println(exceptionGeralt.getMessage());
     }
 }
