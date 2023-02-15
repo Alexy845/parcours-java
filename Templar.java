@@ -1,11 +1,13 @@
 public class Templar extends Character implements Healer,Tank{
+    private Weapon weapon;
     private final int healCapacity;
     private final int shield;
 
-    public Templar(String name, int maxHealth, int healCapacity, int shield) {
-        super(name, maxHealth);
+    public Templar(String name, int maxHealth, int healCapacity, int shield, Weapon weapon) {
+        super(name, maxHealth, weapon);
         this.healCapacity = healCapacity;
         this.shield = shield;
+        this.weapon = weapon;
     }
 
     @Override
@@ -18,8 +20,9 @@ public class Templar extends Character implements Healer,Tank{
         }
     }
     public void attack(Character character) {
+        int damage = (weapon == null) ? 6 : weapon.getDamage();
         heal(this);
-        character.takeDamage(6);
+        character.takeDamage(damage);
     }
 
     @Override
@@ -27,12 +30,9 @@ public class Templar extends Character implements Healer,Tank{
         return healCapacity;
     }
     @Override
-    public void heal(Character character) { 
-        int currentHealth = character.getCurrentHealth();
-        int maxHealth = character.getMaxHealth();
-        int healAmount = Math.min(maxHealth - currentHealth, healCapacity);
-        int newHealth = currentHealth + healAmount;
-        character.setCurrentHealth(newHealth);
+    public void heal(Character c) {
+        int newHealth = c.getCurrentHealth() + this.healCapacity;
+        c.setCurrentHealth(Math.min(newHealth, c.getMaxHealth()));
     }
     @Override
     public int getShield() {
@@ -42,8 +42,8 @@ public class Templar extends Character implements Healer,Tank{
     @Override
     public String toString() {
         if (getCurrentHealth() <= 0) {
-            return getName() + " has been beaten, even with its " + getShield() + " shield. So bad, it could heal " + getHealCapacity() + " HP.";
+            return getName() + " has been beaten, even with its " + getShield() + " shield. So bad, it could heal " + getHealCapacity() + " HP." + (this.weapon != null ? " He has the weapon " + this.weapon.toString() : "") + ".";
         }
-        return getName() + " is a strong Templar with " + getCurrentHealth() + " HP. It can heal " + getHealCapacity() + " HP and has a shield of " + getShield() + ".";
+        return getName() + " is a strong Templar with " + getCurrentHealth() + " HP. It can heal " + getHealCapacity() + " HP and has a shield of "  + (this.weapon != null ? " He has the weapon " + this.weapon.toString() : "") + ".";
     }
 }
