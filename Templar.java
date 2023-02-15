@@ -30,6 +30,6 @@ public class Templar extends Character implements Healer,Tank{
         if (getCurrentHealth() <= 0) {
             return getName() + " has been beaten, even with its " + getShield() + " shield. So bad, it could heal" + getHealCapacity() + " HP.";
         }
-        return getName() + " is a strong Templar with " + getCurrentHealth() + "HP. It can heal " + getHealCapacity() + " HP and has a shield of " + getShield() + ".";
+        return getName() + " is a strong Templar with " + getCurrentHealth() + " HP. It can heal " + getHealCapacity() + " HP and has a shield of " + getShield() + ".";
     }
 }
