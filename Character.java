@@ -31,7 +31,7 @@ public abstract class Character {
     public abstract void takeDamage(int damage);
 
     public abstract void attack(Character character);
-    
+
     public static String printStatus() {
         String miseEnPage = "------------------------------------------";
         String res = miseEnPage+"\n"+"Characters currently fighting :";
@@ -71,6 +71,9 @@ public abstract class Character {
 
     }
     public void heal(int i) {
+    }
+    public int getShield() {
+        return 0;
     }
 }
 
