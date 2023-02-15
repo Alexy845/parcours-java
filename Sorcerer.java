@@ -10,7 +10,19 @@ public class Sorcerer extends Character implements Healer {
     public int getHealCapacity() {
         return healCapacity;
     }
-
+    @Override
+    public void takeDamage(int damage) {
+        if (damage > currentHealth){
+            currentHealth = 0;
+        }else{
+            currentHealth -= damage;
+        }
+    }
+    @Override
+    public void attack(Character character) {
+        heal(character);
+        character.takeDamage(10);
+    }
     @Override
     public void heal(Character character) { 
         int currentHealth = character.getCurrentHealth();

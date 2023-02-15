@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Character {
+public abstract class Character {
 
     private final int maxHealth;
     protected int currentHealth;
@@ -28,20 +28,10 @@ public class Character {
         allCharacters.add(this);
     }
 
-    public void takeDamage(int damage) {
-        if (damage > currentHealth){
-            currentHealth = 0;
-        }else{
-            currentHealth -= damage;
-        }
-    }
-    public void attack (Character Uruk) {
-        Uruk.takeDamage(9);
-    }
-    public void allCharacters() {
-        allCharacters.add(this);
+    public abstract void takeDamage(int damage);
 
-    }
+    public abstract void attack(Character character);
+    
     public static String printStatus() {
         String miseEnPage = "------------------------------------------";
         String res = miseEnPage+"\n"+"Characters currently fighting :";
