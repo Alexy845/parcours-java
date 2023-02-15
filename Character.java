@@ -9,6 +9,9 @@ public abstract class Character {
     private static List <Character> allCharacters = new ArrayList<>();
     private Weapon weapon;
     
+    public Weapon getWeapon() {
+        return weapon;
+    }
     public int getMaxHealth() {
         return maxHealth;
     }
