@@ -14,6 +14,9 @@ public class Character {
     public int getCurrentHealth() {
         return currentHealth;
     }
+    public void setCurrentHealth(int health) {
+        this.currentHealth = health;
+    }
     public String getName() {
         return name;
     }
