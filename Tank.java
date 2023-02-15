@@ -1,6 +1,3 @@
-public class Tank {
-    public int getShield() {
-        int shield = 10;
-        return shield;
-    }
+public interface Tank {
+    public int getShield();
 }
