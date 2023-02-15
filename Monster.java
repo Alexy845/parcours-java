@@ -8,8 +8,7 @@ public class Monster extends Character {
         if (damage > currentHealth){
             currentHealth = 0;
         }else{
-            int healthAfterDamage = getCurrentHealth() - (int) (0.8 * damage);
-            setCurrentHealth(healthAfterDamage);
+            currentHealth -= damage;
         }
     }
     @Override
