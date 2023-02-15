@@ -47,3 +47,4 @@ public class Templar extends Character implements Healer,Tank{
         return getName() + " is a strong Templar with " + getCurrentHealth() + " HP. It can heal " + getHealCapacity() + " HP and has a shield of "  + (this.weapon != null ? " He has the weapon " + this.weapon.toString() : "") + ".";
     }
 }
+
