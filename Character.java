@@ -77,5 +77,7 @@ public class Character {
 
 
     }
+    public void heal(int i) {
+    }
 }
 
