@@ -11,18 +11,26 @@ public class Templar extends Character implements Healer,Tank{
     }
 
     @Override
-    public void takeDamage(int damage) {
+    public void takeDamage(int damage) throws DeadCharacterException {
+        if (currentHealth <= 0) {
+            throw new DeadCharacterException(this);
+        }
         int damageAfterShield = damage - shield;
         if (damageAfterShield > currentHealth){
             currentHealth = 0;
         } else {
             currentHealth -= damageAfterShield;
         }
+
     }
-    public void attack(Character character) {
+    public void attack(Character character) throws DeadCharacterException{
+        if (character.getCurrentHealth() <= 0) {
+            throw new DeadCharacterException(character);
+        }
         int damage = (weapon == null) ? 6 : weapon.getDamage();
         heal(this);
         character.takeDamage(damage);
+
     }
 
     @Override
@@ -30,9 +38,13 @@ public class Templar extends Character implements Healer,Tank{
         return healCapacity;
     }
     @Override
-    public void heal(Character c) {
+    public void heal(Character c) throws DeadCharacterException {
+        if (c.getCurrentHealth() <= 0) {
+            throw new DeadCharacterException(c);
+        }
         int newHealth = c.getCurrentHealth() + this.healCapacity;
         c.setCurrentHealth(Math.min(newHealth, c.getMaxHealth()));
+
     }
     @Override
     public int getShield() {

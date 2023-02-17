@@ -33,9 +33,9 @@ public abstract class Character {
         this.weapon = weapon;
     }
 
-    public abstract void takeDamage(int damage);
+    public abstract void takeDamage(int damage) throws DeadCharacterException;
 
-    public abstract void attack(Character character);
+    public abstract void attack(Character character) throws DeadCharacterException;
 
     public static String printStatus() {
         String miseEnPage = "------------------------------------------";
@@ -50,7 +50,7 @@ public abstract class Character {
         return res;
     }
 
-    public static Character fight(Character character1, Character character2) {
+    public static Character fight(Character character1, Character character2) throws DeadCharacterException {
         while (character1.getCurrentHealth() > 0 || character2.getCurrentHealth() > 0) {
             character1.attack(character2);
         if (character2.getCurrentHealth() <= 0) {
